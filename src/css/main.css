@@ -1,0 +1,113 @@
+
+
+/*  Pattern colors, sizes, spacing*/
+
+/* ------------- ESTILOS GERAIS ------------- */
+
+
+
+
+*, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    outline: 0;
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    
+    --color--orange: #FF5000;
+    --color--purple: #9B51E0;
+    --color--yellow: #FCB900;
+    --color--blue: #0693E3;
+    --color--green: #00D084;
+    --color--white: #FFF;
+    --color--black: #000000;
+    
+
+    --background-black: #000000;
+    --background-black-opacity: #00000060;
+    --bacground-white: #FFFFFF;
+ 
+    
+}
+
+.xs-top{
+
+    padding-top: 2em;
+
+}
+.s-top{
+
+    padding-top: 3.24em;
+
+}
+.m-top{
+
+    padding-top: 5.24em;
+
+}
+
+.l-top{
+
+    padding-top: 8.48em;
+
+}
+.xl-top{
+
+    padding-top: 13.72em;
+
+}
+.xxl-top{
+
+    padding-top: 22.20em;
+
+}
+
+
+.xs-bottom{
+
+    padding-bottom: 2em;
+
+}
+.s-bottom{
+
+    padding-bottom: 3.24em;
+
+}
+.m-bottom{
+
+    padding-bottom: 5.24em;
+
+}
+
+.l-bottom{
+
+    padding-bottom: 8.48em;
+
+}
+.xl-bottom{
+
+    padding-bottom: 13.72em;
+
+}
+.xxl-bottom{
+
+    padding-bottom: 22.20em;
+
+}
+
+.title{
+    font-size:4em;
+}
+
+.sub-title{
+    font-size: 2.48em;
+}
+
+.desc-text{
+    font-size: 1.2em;
+}
+ 

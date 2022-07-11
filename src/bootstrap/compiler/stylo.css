@@ -1,0 +1,49 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: 0% 24%;
+  Background-attachment: scroll;
+  color: #000000; }
+
+footer {
+  background-color: #191919;
+  Background-attachment: scroll;
+  background-position: 0% 24%; }
+
+#lf {
+  position: relative;
+  float: left; }
+
+.scrollspysite {
+  color: #FF550A;
+  position: relative;
+  overflow: auto;
+  height: 370px; }
+
+.navbarSite {
+  margin-left: 110px; }
+
+#lc {
+  object-position: right; }
+
+#orange {
+  color: #FF550A; }
+
+#green {
+  color: #16DC5B; }
+
+#red {
+  color: #E32424; }
+
+#blue {
+  color: #00BFFF; }
+
+#purple {
+  color: #5410A8; }
+
+#cyan {
+  color: #17a2b8; }

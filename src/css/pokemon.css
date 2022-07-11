@@ -1,0 +1,89 @@
+@font-face {
+  font-family: Shield;
+  src: url(../font/Shield.ttf) 
+}
+
+
+
+body{
+  
+  --color--orange: #FF5000;
+  --color--purple: #9B51E0;
+  --color--yellow: #FCB900;
+  --color--blue: #0693E3;
+  --color--green: #00D084;
+  --color--white: #FFF;
+  --color--black: #000000;
+  --background-black: #000000; 
+  color: var(--color--white) !important;
+  /*font-family: 'Shield';*/
+  font-family: 'Shield' !important;
+  background: rgb(244,82,57);
+  background: linear-gradient(117deg, rgba(244,82,57,1) 0%, rgba(250,114,72,1) 50%, rgba(255,123,75,1) 100%) fixed;
+}
+
+
+.logo{
+
+  font-family: 'Shield';
+  font-size: 1.5rem;
+}
+
+header{
+  top:0;
+  left: 0;
+  width: 100%;
+  height: max-content;
+  z-index: 10;
+  transition: 0.3s;
+  /*background-color: red;*/
+}
+
+
+ul{
+  list-style-type: none;
+  color:var(--color--purple);
+  font-size: 0.8em;
+}
+
+
+.card{
+  background: rgb(235, 235, 235);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(219,219,219,1) 49%, rgba(255,255,255,1) 100%);
+  box-shadow: -11px -8px 19px 4px rgba(138,138,138,1);
+  -webkit-box-shadow: -30px -24px 21px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: -30px -24px 21px -15px rgba(0,0,0,0.75);
+  box-shadow: -30px -24px 21px -15px rgba(0,0,0,0.75);
+  border-radius: 20px !important;
+  color: rgba(250, 250, 250, 0.8) !important;
+  margin-bottom: 2rem !important;  
+  height: max-content;
+  font-family: 'Shield' !important;
+  color: var(--color--black) !important;
+}
+ 
+
+.card-img-top{   
+  position: relative !important; 
+  top:2em !important;
+  width: 50% !important;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+
+}
+
+
+.row, .max-hg{
+
+  position: relative;
+  max-height: 20em !important;
+
+}
+
+a {
+
+  text-decoration: none !important;
+  color: #000000 !important;
+
+}

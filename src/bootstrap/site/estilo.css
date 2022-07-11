@@ -1,0 +1,61 @@
+#body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-position: 0% 24%;
+  Background-attachment: scroll;
+  color: #ff550a; }
+
+header {
+  top: 0%;
+  background-color: #191919;
+  position: fixed;
+  min-height: 60px;
+  right: 0;
+  left: 0;
+  z-index: 2; }
+
+.logo {
+  position: relative;
+  left: 0px;
+  height: 75%;
+  width: 35%; }
+
+.img {
+  position: absolute;
+  height: 50px;
+  width: 60px;
+  top: -5px; }
+
+.scrollspysite {
+  position: relative;
+  overflow: auto;
+  height: 370px; }
+
+.navbarSite {
+  margin-left: 110px; }
+
+#lc {
+  object-position: right; }
+
+#orange {
+  color: #FF611A; }
+
+#green {
+  color: #16DC5B; }
+
+#red {
+  color: #E32424; }
+
+#blue {
+  color: #00BFFF; }
+
+#purple {
+  color: #6f42c1; }
+
+#cyan {
+  color: #17a2b8; }
+
+/*# sourceMappingURL=estilo.css.map */
