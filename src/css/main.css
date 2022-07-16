@@ -4,6 +4,7 @@
 
 /* ------------- ESTILOS GERAIS ------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
 
@@ -30,6 +31,7 @@
     --background-black: #000000;
     --background-black-opacity: #00000060;
     --bacground-white: #FFFFFF;
+    
  
     
 }

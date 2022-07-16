@@ -17,7 +17,7 @@
         </header>
        <!-- Inicio da  logica de troca de detalhe pra dex --> 
         <?php 
-        $i = 1;
+
       
         if(!isset($_GET['pokemon'])){
 
@@ -33,38 +33,22 @@
                     if($p % 3 == 1) { echo '<div class="row"> ' ;}
 
                    echo '<div class="col-4 max-hg" >
-                        <a href="index.php?pokemon='. $Pokemon->id.'">
+                        <a href="index.php?pokemon='. $Pokemon->id.'"
                         <div class="card">
                         <img src="'.$Pokemon->img.'"alt="'.$Pokemon->name.'" class="card-img-top img">
                         <div class="card-body">
-                            <div class="card-text content">
+                            <div class="card-text content>
                             <h4>'.$Pokemon->name.'</h4>
                             <ul>
                             ';
                             if(empty($Pokemon->next_evolution)) {
-                                echo 'Não possui proximas evoluções';
+                                echo 'Não possui Proximas evoluções';
                                 
                             }else{
 
-                               echo 'Proximas evoluções: ';
+                               echo 'Proximas evoluções:';
                                 foreach($Pokemon->next_evolution as $ProximaEvolucao) {
-                                if(count($Pokemon->next_evolution ) > 1){
-                                   if($i == 1){
-                                        
                                    echo $ProximaEvolucao->name . ", ";
-                                   $i ++;
-                                   
-                                   }else{
-                                       
-                                   echo $ProximaEvolucao->name . ". ";
-                                   $i = 1;
-                                   }
-                                   
-                                }else{
-                                    
-                                     echo $ProximaEvolucao->name . ". ";  
-                                }
-                                    
                                 }
                             }
                                 
