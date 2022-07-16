@@ -8,7 +8,7 @@
         <link href="src/img/pokedex.ico"  rel="shortcut icon" type="image/x-icon" style="font-size:6em;" />
         <link href="src/css/pokemon.css" rel="stylesheet" type="text/css" /> 
         <link href="src/css/main.css" rel="stylesheet" type="text/css" /> 
-        <link href="src/bootstrap/compiler/bootstrap.css" rel="stylesheet" type="text/css" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
             <title>Pokédex - Api </title>
         </head>
     <body>
