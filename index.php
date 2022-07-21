@@ -32,10 +32,10 @@
                     
                     if($p % 3 == 1) { echo '<div class="row"> ' ;}
 
-                   echo '<div class="col-4 max-hg" >
+                   echo '<div class="col-4 max-hg " >
                         <a href="index.php?pokemon='. $Pokemon->id.'">
-                        <div class="card">
-                        <img src="'.$Pokemon->img.'"alt="'.$Pokemon->name.'" class="card-img-top img">
+                        <div class="card ">
+                        <img src="'. $imgPrimary . $Pokemon->id .'.png"alt="'.$Pokemon->name.'" class="card-img-top img">
                         <div class="card-body">
                             <div class="card-text content">
                             <h4>'.$Pokemon->name.'</h4>
@@ -92,7 +92,53 @@
         }else if(isset($_GET['pokemon'])){
 
             //CODIGO DOS DETALHES
-echo '<main>teste</main>';
+            echo '<main class="container mt-5 detail-poke">';
+            
+            foreach($pokemons->pokemon as $Pokemon) {
+                
+                if($Pokemon->id == $_GET['pokemon'] ) {
+                    echo '
+                    <div class="row d-flex justify-content-between col-12">
+                    <div class="col-6 imagem-glass " ><img src="'. $imgPrimary. $_GET["pokemon"] .'.png" alt="'.$Pokemon->name.'" class="img-center-mod"></div>
+                    <div class="col-6"> 
+                            <div class="title-name-detail d-flex justify-content-between">
+                                <img  class="icon-poke" src="'. $imgSecondary. $Pokemon->num .'.png"/>
+                                <span class="sub-name-poke">Nu.&nbsp;'. $Pokemon->num .'</span>&nbsp;
+                                <span class="sub-name-poke">'. $Pokemon->name .'</span>
+                                <span class="icons-genre"></span>
+                            </div> 
+                            
+                              
+                            <table class="table">
+                                    
+                                <tbody>
+                                  <tr>
+                                    <td class="text-left">Tipo</td>
+                                    <td class="text-right">';foreach($Pokemon->type as $tipo) {
+                                        echo '<span class="type-'.$tipo.'">'.$tipo.'</span>&nbsp;';}echo '</td></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-left">Altura</td>
+                                    <td class="text-right">'.$Pokemon->height.'</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-left">Peso</td>
+                                    <td class="text-right">'.$Pokemon->weight.'</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="text-left">Fraquezas</td>
+                                    <td class="text-right">';foreach($Pokemon->weaknesses as $fraqueza) {
+                                           echo '<span class=" type-'.$fraqueza.'">'.$fraqueza.'</span>&nbsp;';}echo '</td>
+                                  </tr>
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>';
+                }
+    
+            }
+       '</main>';
         }
         
       ?>

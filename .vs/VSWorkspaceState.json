@@ -1,4 +1,9 @@
 {
-  "ExpandedNodes": [],
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\font"
+  ],
+  "SelectedNode": "\\src\\font\\index copy.php",
   "PreviewInSolutionExplorer": false
 }
