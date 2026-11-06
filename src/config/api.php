@@ -7,7 +7,7 @@
  */
 
 const POKEDEX_API_URL    = 'https://www.canalti.com.br/api/pokemons.json';
-const POKEDEX_CACHE_FILE = __DIR__ . '/../cache/pokemons.json';
+const POKEDEX_CACHE_FILE = '/tmp/pokedex-cache/pokemons.json'; // /tmp e a unica pasta gravavel na Vercel
 const POKEDEX_CACHE_TTL  = 86400; // 24 horas
 
 function pokedex_fetch_remote(): ?string
