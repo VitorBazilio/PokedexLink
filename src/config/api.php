@@ -9,6 +9,8 @@
 const POKEDEX_API_URL    = 'https://www.canalti.com.br/api/pokemons.json';
 const POKEDEX_CACHE_FILE = '/tmp/pokedex-cache/pokemons.json'; // /tmp e a unica pasta gravavel na Vercel
 const POKEDEX_CACHE_TTL  = 86400; // 24 horas
+// Cópia local dos dados, usada se a API e o cache falharem (ex.: API bloqueando o servidor).
+const POKEDEX_BUNDLED_FILE = __DIR__ . '/../data/pokemons.json';
 
 function pokedex_fetch_remote(): ?string
 {
@@ -22,9 +24,12 @@ function pokedex_fetch_remote(): ?string
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_TIMEOUT        => 15,
+        CURLOPT_USERAGENT      => 'Mozilla/5.0 (compatible; PokedexLink/1.0)',
+        CURLOPT_HTTPHEADER     => ['Accept: application/json'],
     ];
     // No Windows o PHP não traz bundle de certificados; usa o repositório do sistema.
-    if (defined('CURLSSLOPT_NATIVE_CA')) {
+    // (Só no Windows: no Linux, como na Vercel, os certificados padrão já funcionam.)
+    if (PHP_OS_FAMILY === 'Windows' && defined('CURLSSLOPT_NATIVE_CA')) {
         $options[CURLOPT_SSL_OPTIONS] = CURLSSLOPT_NATIVE_CA;
     }
     curl_setopt_array($curl, $options);
@@ -32,7 +37,12 @@ function pokedex_fetch_remote(): ?string
     $body   = curl_exec($curl);
     $status = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
 
-    return ($body !== false && $status === 200) ? $body : null;
+    if ($body === false || $status !== 200) {
+        // Aparece nos logs da Vercel (Logs / Runtime Logs) para facilitar o diagnóstico.
+        error_log(sprintf('Pokedex: falha ao buscar API (HTTP %d) %s', $status, curl_error($curl)));
+        return null;
+    }
+    return $body;
 }
 
 function pokedex_decode(?string $json): ?array
@@ -91,5 +101,9 @@ function pokedex_load(): array
     }
 
     $cached = is_file(POKEDEX_CACHE_FILE) ? pokedex_decode((string) file_get_contents(POKEDEX_CACHE_FILE)) : null;
+    if (!$cached && is_file(POKEDEX_BUNDLED_FILE)) {
+        // Último recurso: cópia dos dados que vai junto com o projeto.
+        $cached = pokedex_decode((string) file_get_contents(POKEDEX_BUNDLED_FILE));
+    }
     return $cached ? array_map('pokedex_normalize', $cached) : [];
 }
